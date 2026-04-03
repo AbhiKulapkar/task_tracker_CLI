@@ -42,5 +42,53 @@ To run this application on your local machine, follow these steps:
 Open your terminal and clone this project:
 ```bash
 git clone [https://github.com/AbhiKulapkar/task_tracker_CLI.git](https://github.com/AbhiKulapkar/task_tracker_CLI.git)
+```
+then move your terminal inside the project folder
+```
 cd task_tracker_CLI
 ```
+### Step 2: Clone the Repository
+1. Open your MySQL client (like MySQL Workbench) and create a new database:
+
+```
+CREATE DATABASE tasktracker;
+```
+
+2. Open the project files and navigate to src/main/resources/application.properties.
+
+3. Update the configuration file with your MySQL credentials:
+
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/tasktracker
+spring.datasource.username=your_mysql_username
+spring.datasource.password=your_mysql_password
+spring.jpa.hibernate.ddl-auto=update
+```
+### Step 3: Run the Application
+
+  You can start the server directly from the terminal using the Maven wrapper:
+
+on Windows:
+  ```
+  mvnw spring-boot:run
+
+  ```
+on Mac/Linux:
+  ```
+  ./mvnw spring-boot:run
+  ```
+  Alternatively, you can open the project folder in an IDE like Eclipse or IntelliJ and click "Run" on the main application class.
+  
+### Step 4: Test the Endpoints
+
+Once the application is running on port 8080, open Postman to test the API. Ensure your request body is set to raw -> JSON.
+
+Available Endpoints:
+- POST: ``` http://localhost:8080/TaskTracker/AddTask ```
+- PUT: ``` http://localhost:8080/TaskTracker/UpdateTask/{taskName} ```
+- DELETE: ``` http://localhost:8080/TaskTracker/DeleteTask/{taskName} ```
+- GET: ``` http://localhost:8080/TaskTracker/Tasks/Todo ```
+- GET: ``` http://localhost:8080/TaskTracker/Tasks/InProgress ```
+- GET: ``` http://localhost:8080/TaskTracker/Tasks/Done ```
+
+  
