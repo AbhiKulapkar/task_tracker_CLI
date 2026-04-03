@@ -2,6 +2,11 @@
 
 A robust backend Task Management REST API built with Java and Spring Boot. This application allows users to securely create, view, update, and delete tasks while seamlessly tracking their lifecycle statuses (`todo`, `inprogress`, `done`). 
 
+i used this project from roadmap.sh for getting hands-on experience in springboot, mysql and postman.
+below is the project page url of it.
+```
+https://roadmap.sh/projects/task-tracker
+```
 A core architectural feature of this project is its strict reliance on **Pure Java Logic**. Instead of abstracting operations behind built-in JPA/Hibernate query methods, the core business logic retrieves entire datasets and processes them using custom manual iteration loops. This guarantees strict data validation, handles space-formatting exceptions, and forces case-insensitive matching entirely at the logic layer.
 
 ## 🚀 Features
